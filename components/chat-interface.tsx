@@ -508,26 +508,7 @@ function MessageRow({
   };
 
   if (message.role === "user") {
-    return (
-      <div className="flex justify-end">
-        <div className="relative">
-          <UserBubble text={text} />
-          <button
-            className="absolute bottom-4 right-4 inline-flex h-8 items-center rounded-full border bg-white/96 px-3 text-[12px] font-medium transition hover:bg-[#f8f8f8]"
-            onClick={handleCopy}
-            style={{
-              borderColor: CHAT_UI_THEME.border,
-              color: copied
-                ? CHAT_UI_THEME.textPrimary
-                : CHAT_UI_THEME.textSecondary,
-            }}
-            type="button"
-          >
-            {copied ? "已复制" : "复制"}
-          </button>
-        </div>
-      </div>
-    );
+    return <UserBubble text={text} />;
   }
 
   return (

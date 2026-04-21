@@ -58,6 +58,21 @@ function inferMarket(text: string): Market {
   return 'CN';
 }
 
+function isFollowUpQuestion(text: string) {
+  const normalized = text.trim().toLowerCase();
+  if (!normalized) return false;
+
+  return (
+    /^(1|2|3|4|5|一|二|三|四|五|第[一二三四五12345]个|第[一二三四五12345]條|第[一二三四五12345]条)$/.test(
+      normalized,
+    ) ||
+    /^(什么意思|什麼意思|为什么|為什麼|怎么|怎麼|哪个|哪個|哪个更好|哪個更好|展开说说|展開說說|细说|細說|解释一下|解釋一下)[\?？]*$/.test(
+      normalized,
+    ) ||
+    normalized.length <= 6
+  );
+}
+
 function buildBeautyExpertBasePrompt() {
   const promptSections = [
     'Role: 医美专业文案助理 (Medical Aesthetics Content Specialist)',
@@ -77,8 +92,8 @@ function buildBeautyExpertBasePrompt() {
     '交互约束：',
     '1. 只输出最终文案成品，不解释，不分析，不补充说明。',
     '2. 默认只给 1 个最佳版本，除非用户明确要多个方案。',
-    '3. 未指定格式时，默认输出且只输出两部分：标题、正文。',
-    '4. 信息不足时，也只补齐一版可用广告文案，不反问，不追加说明文字。',
+    '3. 只有在用户明确要求生成成稿文案、海报文案、平台文案、标题正文成品时，才使用“标题 + 正文”结构。',
+    '4. 如果用户是在追问、选方案、问含义、问原因、做简短确认，不要硬包装成“标题 + 正文”，直接回答当前问题。',
     '5. 不输出“好的”、“没问题”等开场白或结束语。',
     '6. 除非用户明确询问，否则不要提供营销建议、修改策略或额外说明。',
     '7. 优先使用更精炼的表达，减少非必要 token 消耗，保证流式输出更快。',
@@ -165,12 +180,16 @@ export async function POST(request: Request) {
   const ragContext = buildRagContext(favoriteMatches);
   const platformStylePrompt = buildPlatformStylePrompt(latestQuestion);
   const basePrompt = buildBeautyExpertBasePrompt();
+  const followUpPrompt = isFollowUpQuestion(latestQuestion)
+    ? '当前用户输入属于简短追问或选项确认。直接回答当前问题，不要输出“标题 + 正文”格式。'
+    : '';
   const systemInstruction =
     mode === 'Traditional'
       ? `${basePrompt}\nNote: Current mode is Traditional Chinese. Use HK/TW medical aesthetic terminology.`
       : `${basePrompt}\nNote: 当前模式为简体中文。使用内地医美专业术语。`;
   const systemPrompt = [
     systemInstruction,
+    followUpPrompt,
     platformStylePrompt,
     ragContext,
   ]
