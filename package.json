@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "WATCHPACK_POLLING=true next dev -p 3000",
     "dev:direct": "next dev -p 3000",
-    "build": "NEXT_DIST_DIR=.next-build next build",
-    "start": "NEXT_DIST_DIR=.next-build next start",
+    "build": "next build",
+    "build:isolated": "NEXT_DIST_DIR=.next-build next build",
+    "start": "next start",
+    "start:isolated": "NEXT_DIST_DIR=.next-build next start",
     "test": "node --test --experimental-strip-types tests/*.test.ts",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
