@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 860">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+    </pattern>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22d3ee"/>
+    </marker>
+    <marker id="arrow-emerald" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34d399"/>
+    </marker>
+    <marker id="arrow-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a78bfa"/>
+    </marker>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap');
+      text { font-family: 'JetBrains Mono', 'Noto Sans SC', 'PingFang SC', sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+
+  <text x="40" y="46" fill="#ffffff" font-size="16" font-weight="700">Mei AI 当前架构图</text>
+  <text x="40" y="68" fill="#94a3b8" font-size="9">chat-first workspace · market auto-detection · favorite-only RAG · isolated build output</text>
+
+  <rect x="26" y="96" width="1268" height="694" rx="18" fill="none" stroke="#fbbf24" stroke-width="1" stroke-dasharray="8,4"/>
+  <text x="42" y="116" fill="#fbbf24" font-size="9" font-weight="600">Application workspace</text>
+
+  <rect x="60" y="146" width="300" height="520" rx="14" fill="none" stroke="#60a5fa" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="76" y="166" fill="#60a5fa" font-size="9" font-weight="600">Client shell</text>
+
+  <rect x="404" y="146" width="382" height="520" rx="14" fill="none" stroke="#34d399" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="420" y="166" fill="#34d399" font-size="9" font-weight="600">Application logic</text>
+
+  <rect x="832" y="146" width="420" height="520" rx="14" fill="none" stroke="#a78bfa" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="848" y="166" fill="#a78bfa" font-size="9" font-weight="600">Persistence and retrieval</text>
+
+  <rect x="94" y="208" width="232" height="72" rx="8" fill="#0f172a"/>
+  <rect x="94" y="208" width="232" height="72" rx="8" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="210" y="236" fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle">ChatInterface</text>
+  <text x="210" y="255" fill="#94a3b8" font-size="9" text-anchor="middle">thread list · chat canvas · composer</text>
+
+  <rect x="94" y="330" width="232" height="72" rx="8" fill="#0f172a"/>
+  <rect x="94" y="330" width="232" height="72" rx="8" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="210" y="358" fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle">Dynamic suggestions</text>
+  <text x="210" y="377" fill="#94a3b8" font-size="9" text-anchor="middle">homepage uses Simplified pool only</text>
+
+  <rect x="94" y="452" width="232" height="72" rx="8" fill="#0f172a"/>
+  <rect x="94" y="452" width="232" height="72" rx="8" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="210" y="480" fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle">Feedback and thread actions</text>
+  <text x="210" y="499" fill="#94a3b8" font-size="9" text-anchor="middle">copy · 满意/不满意 · delete thread</text>
+
+  <rect x="478" y="208" width="236" height="76" rx="8" fill="#0f172a"/>
+  <rect x="478" y="208" width="236" height="76" rx="8" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="596" y="237" fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle">/api/chat</text>
+  <text x="596" y="257" fill="#94a3b8" font-size="9" text-anchor="middle">streamText · prompt assembly · response headers</text>
+
+  <rect x="478" y="332" width="236" height="76" rx="8" fill="#0f172a"/>
+  <rect x="478" y="332" width="236" height="76" rx="8" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="596" y="361" fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle">Market detection</text>
+  <text x="596" y="381" fill="#94a3b8" font-size="9" text-anchor="middle">user text -&gt; CN or HK, no visible toggle</text>
+
+  <rect x="478" y="456" width="236" height="76" rx="8" fill="#0f172a"/>
+  <rect x="478" y="456" width="236" height="76" rx="8" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="596" y="485" fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle">Prompt builder</text>
+  <text x="596" y="505" fill="#94a3b8" font-size="9" text-anchor="middle">base prompt + mode note + platform style + RAG</text>
+
+  <rect x="892" y="198" width="300" height="92" rx="8" fill="#0f172a"/>
+  <rect x="892" y="198" width="300" height="92" rx="8" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="1042" y="230" fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle">Supabase chat_memories</text>
+  <text x="1042" y="252" fill="#94a3b8" font-size="9" text-anchor="middle">full turn storage · session_id · region · favorite flag</text>
+  <text x="1042" y="270" fill="#94a3b8" font-size="9" text-anchor="middle">used both for history persistence and sample curation</text>
+
+  <rect x="892" y="344" width="300" height="92" rx="8" fill="#0f172a"/>
+  <rect x="892" y="344" width="300" height="92" rx="8" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="1042" y="376" fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle">match_favorite_chat_memories</text>
+  <text x="1042" y="398" fill="#94a3b8" font-size="9" text-anchor="middle">favorite-only recall · filtered by region</text>
+  <text x="1042" y="416" fill="#94a3b8" font-size="9" text-anchor="middle">pgvector cosine search on 256-d local embedding</text>
+
+  <rect x="892" y="490" width="300" height="92" rx="8" fill="#0f172a"/>
+  <rect x="892" y="490" width="300" height="92" rx="8" fill="rgba(120,53,15,0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="1042" y="522" fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle">Provider endpoint</text>
+  <text x="1042" y="544" fill="#94a3b8" font-size="9" text-anchor="middle">OpenAI-compatible API via MEI_AI_PROVIDER_BASE_URL</text>
+  <text x="1042" y="562" fill="#94a3b8" font-size="9" text-anchor="middle">default model comes from MEI_AI_MODEL</text>
+
+  <path d="M326 244 L478 244" fill="none" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrow-cyan)"/>
+  <text x="402" y="235" fill="#22d3ee" font-size="8" text-anchor="middle">messages + session</text>
+
+  <path d="M326 366 L478 366" fill="none" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrow-cyan)"/>
+  <text x="402" y="357" fill="#22d3ee" font-size="8" text-anchor="middle">prompt hints from home screen</text>
+
+  <path d="M714 370 L892 390" fill="none" stroke="#34d399" stroke-width="2" marker-end="url(#arrow-emerald)"/>
+  <text x="800" y="364" fill="#34d399" font-size="8" text-anchor="middle">query embedding + region</text>
+
+  <path d="M892 420 L714 494" fill="none" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrow-violet)"/>
+  <text x="804" y="470" fill="#a78bfa" font-size="8" text-anchor="middle">favorite samples</text>
+
+  <path d="M714 244 L892 536" fill="none" stroke="#34d399" stroke-width="2" marker-end="url(#arrow-emerald)"/>
+  <text x="818" y="320" fill="#34d399" font-size="8" text-anchor="middle">stream request</text>
+
+  <path d="M892 552 L714 260" fill="none" stroke="#34d399" stroke-width="2" marker-end="url(#arrow-emerald)"/>
+  <text x="814" y="430" fill="#34d399" font-size="8" text-anchor="middle">streamed answer</text>
+
+  <path d="M596 532 L596 616 L1042 616 L1042 290" fill="none" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrow-violet)"/>
+  <text x="812" y="606" fill="#a78bfa" font-size="8" text-anchor="middle">persist completed turn after onFinish</text>
+
+  <rect x="58" y="710" width="380" height="54" rx="8" fill="#0f172a"/>
+  <rect x="58" y="710" width="380" height="54" rx="8" fill="rgba(30,41,59,0.5)" stroke="#94a3b8" stroke-width="1.2"/>
+  <text x="248" y="732" fill="#ffffff" font-size="10" font-weight="600" text-anchor="middle">要点 1</text>
+  <text x="248" y="749" fill="#cbd5e1" font-size="8" text-anchor="middle">市场语境由后台自动识别，前台不再暴露简繁切换，首页推荐默认保持简体。</text>
+
+  <rect x="470" y="710" width="380" height="54" rx="8" fill="#0f172a"/>
+  <rect x="470" y="710" width="380" height="54" rx="8" fill="rgba(30,41,59,0.5)" stroke="#94a3b8" stroke-width="1.2"/>
+  <text x="660" y="732" fill="#ffffff" font-size="10" font-weight="600" text-anchor="middle">要点 2</text>
+  <text x="660" y="749" fill="#cbd5e1" font-size="8" text-anchor="middle">RAG 只用 favorite 样本做风格补充，不把全部聊天记录直接塞进上下文。</text>
+
+  <rect x="882" y="710" width="370" height="54" rx="8" fill="#0f172a"/>
+  <rect x="882" y="710" width="370" height="54" rx="8" fill="rgba(30,41,59,0.5)" stroke="#94a3b8" stroke-width="1.2"/>
+  <text x="1067" y="732" fill="#ffffff" font-size="10" font-weight="600" text-anchor="middle">要点 3</text>
+  <text x="1067" y="749" fill="#cbd5e1" font-size="8" text-anchor="middle">开发态 `.next` 与构建态 `.next-build` 分离，避免 build 校验破坏 dev 产物。</text>
+</svg>
