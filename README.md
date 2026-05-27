@@ -1,15 +1,19 @@
 # Mei AI
 
-Mei AI 是一个给医美内容团队使用的文案工作台。
+Mei AI is a copywriting workbench for medical aesthetics content teams.
 
-当前版本支持：
+<p align="center">
+  <a href="README.zh-CN.md">中文</a> | English
+</p>
 
-- 医美文案生成，默认输出 `标题 + 正文`
-- 自动识别内地 / 香港市场语境
-- 小红书、朋友圈等平台风格补充
-- 收藏样本驱动的轻量 RAG
-- 流式输出
-- 线程保存、复制、删除
+## Features
+
+- Medical aesthetics copy generation, outputs `Title + Body`
+- Auto-detects mainland China / Hong Kong market context
+- Platform style support for Xiaohongshu, Moments, etc.
+- Sample-driven lightweight RAG
+- Streaming output
+- Thread save, copy, delete
 
 ## Run
 
